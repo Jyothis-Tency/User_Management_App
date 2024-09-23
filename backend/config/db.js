@@ -5,11 +5,11 @@ dotenv.config();
 
 const connectDB = async () => {
   try {
-    let connect = await mongoose.connect("mongodb://127.0.0.1:27017/redux_app");
-
-    console.log("MongoDB connect");
+    await mongoose.connect(process.env.MONGO_DB).then(() => {
+      console.log("Database Connected");
+    });
   } catch (error) {
-    console.log(error.message);
+    console.log("Database not Connected - ", error.message);
   }
 };
 

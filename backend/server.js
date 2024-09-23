@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const userRoute = require("./router/userRoute");
+const adminRoute = require("./router/adminRoute");
 const connectDB = require("./config/db");
 dotenv.config();
 
@@ -15,10 +17,11 @@ app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/backend/assets", express.static(path.join(__dirname, "./assets")));
-// app.use("/api/users", require("./router/userRoute"));
-// app.use("/api/admin", require("./router/adminRoute"));
+app.use("/images", express.static(path.join(__dirname, "/assets")));
+
+app.use("/", userRoute);
+
 
 app.listen(port, () => {
-  console.log("Server Started");
+  console.log(`Server running on http://localhost:${port}`);
 });

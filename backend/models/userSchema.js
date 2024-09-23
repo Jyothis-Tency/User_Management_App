@@ -1,26 +1,36 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      require: true,
     },
     email: {
       type: String,
-      required: true,
+      require: true,
+    },
+    mobile: {
+      type: String,
+      require: true,
     },
     password: {
       type: String,
-      required: true,
+      require: true,
     },
     image: {
       type: String,
+      default: "Unknown_person.jpg",
+    },
+    isBlocked: {
+      type: Boolean,
+      default: false,
     },
   },
   {
+    versionKey: false,
     timestamps: true,
   }
 );
 
-export default User = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
