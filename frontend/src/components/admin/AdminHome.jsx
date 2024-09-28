@@ -402,6 +402,12 @@ const AdminHome = () => {
           {showModal && (
             <div className="modal">
               <div className="modal-content">
+                <button
+                  className="close-button"
+                  onClick={() => setShowModal(false)}
+                >
+                  Close
+                </button>
                 <h2>Add User</h2>
                 <input
                   type="text"
@@ -439,6 +445,7 @@ const AdminHome = () => {
                   onChange={newUserOnChange}
                 />
                 <button onClick={handleAddUser}>Add</button>
+                
               </div>
             </div>
           )}

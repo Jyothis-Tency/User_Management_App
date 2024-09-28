@@ -90,72 +90,79 @@ const UserSignUp = () => {
   }
 
   return (
-    <>
-      <div className="container">
-        <Toaster position="top-center" />
-        <div className="signup-box">
-          <div className="image-side">
-            <img src="/src/assets/usericon.png" alt="Nature" />
-          </div>
-          <div className="form-side">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="input-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="mobile">Mobile</label>
-                <input
-                  type="tel"
-                  id="mobile"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </div>
-              <button type="submit">Register</button>
+    <div className="container">
+      <Toaster position="top-center" />
+      <div className="signup-box">
+        <div className="image-side">
+          <img src="/src/assets/usericon.png" alt="Nature" />
+        </div>
+        <div className="form-side">
+          <h2>Sign Up</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <label htmlFor="name" style={{ color: "white" }}>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="email" style={{ color: "white" }}>
+                Email
+              </label>
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="mobile" style={{ color: "white" }}>
+                Mobile
+              </label>
+              <input
+                type="tel"
+                id="mobile"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="password" style={{ color: "white" }}>
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="confirmPassword" style={{ color: "white" }}>
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit">Register</button>
 
-              <span>
-                Already have an account?{" "}
-                <Link to={"/login"}>Log in here!!!</Link>
-              </span>
-            </form>
-          </div>
+            <span>
+              Already have an account? <Link to={"/login"}>Log in here!!!</Link>
+            </span>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
