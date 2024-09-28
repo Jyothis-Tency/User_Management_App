@@ -1,0 +1,62 @@
+.navbar {
+  background-color: #2a6d29;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Fix it at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure it's on top of other elements */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensure padding is included within width */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* Ensure it's visible on the green background */
+  white-space: nowrap; /* Prevent long text from wrapping */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0; /* Remove default list margin */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar-links li {
+  margin: 0;
+}
+
+.navbar-links li a {
+  color: rgb(255, 255, 255); /* Make the links white */
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Add padding for clickable area */
+  display: block; /* Ensure the entire area is clickable */
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Ensure the navbar is fully visible on mobile or small screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem; /* Reduce padding for smaller screens */
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .navbar-links {
+    flex-direction: column; /* Stack the links vertically */
+    gap: 0.5rem;
+  }
+}

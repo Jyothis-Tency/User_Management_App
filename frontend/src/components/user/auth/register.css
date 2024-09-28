@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3f8545; /* Light green background */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-box {
+  display: flex;
+  width: 95%; /* Increased width for a much larger box */
+  height: 600px; /* Increased height for more space */
+  max-width: 1500px; /* Optional max width for better responsiveness */
+  background-color: #c8e6c9; /* Light green box */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Prevent overflow of content */
+}
+
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-side img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+}
+
+.form-side {
+  flex: 1;
+  padding: 30px; /* Increased padding for more spacing */
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  justify-content: flex-start; /* Align form elements at the top */
+}
+
+.form-side h2 {
+  margin-bottom: 25px; /* Increased margin for better separation */
+  color: #2e7d32; /* Dark green for header */
+  text-align: center; /* Center the header text at the top */
+  align-self: center; /* Center align the heading */
+}
+
+.input-group {
+  margin-bottom: 10px; /* Reduced bottom margin for closer spacing */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 4px; /* Reduced margin for compactness */
+  color: #000000; /* Medium green for labels */
+  font-weight: bold; /* Bold labels for clarity */
+  text-align: left;
+}
+
+.input-group input {
+  width: 100%;
+  color: #000000;
+  background-color: #abb4ad;
+  padding: 10px; /* Slightly increased padding for better input experience */
+  border : none;
+  border-radius: 10px;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+span{
+  color: #61aa3f;
+}
+
+button {
+  width: 100%;
+  padding: 12px; /* Increased padding for better clickability */
+  background-color: #2e7d32; /* Dark green for button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Larger font for the button */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+button:hover {
+  background-color: #1b5e20; /* Darker green on hover */
+}

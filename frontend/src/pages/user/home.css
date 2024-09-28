@@ -1,0 +1,231 @@
+/* Body Level Styling */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* Dark green background */
+}
+
+/* Container for main content (excluding the navbar) */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px); /* Adjust based on navbar height */
+  margin-top: 60px; /* Add margin equal to the navbar height */
+}
+
+/* Home Page Card Styling */
+.home-card {
+  background-color: #ebe8e8; /* Light gray card background */
+  width: 900px; /* Adjusted width */
+  max-width: 90%; /* Ensure it doesn't overflow on smaller screens */
+  height: auto; /* Allow height to adjust based on content */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  justify-content: space-between; /* To distribute profile and details section */
+  transition: all 0.3s ease-in-out; /* Smooth transitions for responsiveness */
+  overflow: hidden; /* Prevent overflow */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #333;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+.profile-picture img {
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.default-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.edit-profile-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #414141;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-profile-btn:hover {
+  background-color: #555;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* Details Section */
+.details-section {
+  width: 55%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+h2 {
+  color: #347a35;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.home-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.save-details-btn,
+.edit-details-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.save-details-btn:hover,
+.edit-details-btn:hover {
+  background-color: #333;
+}
+
+/* For general text in details */
+p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/* Medium Screens */
+@media (max-width: 1024px) {
+  .home-card {
+    width: 80%; /* Reduce card width for medium screens */
+    height: auto; /* Allow height to adjust based on content */
+    flex-direction: column; /* Stack sections vertically */
+    padding: 10px;
+  }
+
+  .profile-section,
+  .details-section {
+    width: 100%; /* Make sections full width */
+    margin-bottom: 20px; /* Add spacing between stacked sections */
+  }
+
+  .profile-picture img {
+    width: 180px;
+    height: 180px; /* Adjust image size */
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar elements vertically */
+    padding: 0.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem; /* Reduce navbar brand font size */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center; /* Center the links */
+    gap: 0.5rem;
+  }
+
+  .home-card {
+    width: 100%; /* Full width for small screens */
+    padding: 10px;
+    height: auto; /* Allow height to grow with content */
+    flex-direction: column; /* Stack profile and details sections */
+  }
+
+  .profile-section {
+    width: 100%;
+    border-radius: 10px; /* Apply radius to entire section */
+  }
+
+  .details-section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .profile-picture img {
+    width: 150px; /* Smaller image for mobile */
+    height: 150px;
+  }
+
+  h2 {
+    font-size: 20px; /* Adjust heading size */
+  }
+
+  .home-input,
+  .save-details-btn,
+  .edit-details-btn {
+    font-size: 12px; /* Smaller input and button font sizes */
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .home-card {
+    padding: 5px;
+  }
+
+  .profile-picture img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .home-input,
+  .save-details-btn,
+  .edit-details-btn {
+    font-size: 10px;
+  }
+}

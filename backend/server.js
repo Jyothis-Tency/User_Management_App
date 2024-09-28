@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/images", express.static(path.join(__dirname, "/assets")));
 
 app.use("/", userRoute);
-
+app.use("/admin",adminRoute)
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
