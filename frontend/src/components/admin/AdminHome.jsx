@@ -36,6 +36,21 @@ const AdminHome = () => {
   const [search, setSearch] = useState("");
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    window.history.pushState(null, null, window.location.href);
+
+    const handlePopState = (event) => {
+      window.history.pushState(null, null, window.location.href);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   let { name, email, mobile, password, confirmPassword } = newUser;
 
   const handleSearch = (e) => {
@@ -445,7 +460,6 @@ const AdminHome = () => {
                   onChange={newUserOnChange}
                 />
                 <button onClick={handleAddUser}>Add</button>
-                
               </div>
             </div>
           )}

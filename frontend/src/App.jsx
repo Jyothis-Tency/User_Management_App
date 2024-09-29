@@ -6,7 +6,8 @@ import UserLogin from "./components/user/auth/login";
 import AdminHome from "./components/admin/AdminHome";
 import Home from "./pages/user/home";
 import Login from "./pages/admin/Login";
-import UserAuth from "./components/user/middleware/userAuth";
+import UserAuth from "./components/user/Authent/userAuth";
+import AdminAuth from "./components/admin/Authent/adminAuth";
 
 import configStore from "./redux/store";
 import "./App.css";
@@ -27,7 +28,14 @@ function App() {
             }
           ></Route>
           <Route path="/admin/login" element={<Login />}></Route>
-          <Route path="/admin/home" element={<AdminHome />}></Route>
+          <Route
+            path="/admin/home"
+            element={
+              <AdminAuth>
+                <AdminHome />
+              </AdminAuth>
+            }
+          ></Route>
         </Routes>
       </Provider>
     </>

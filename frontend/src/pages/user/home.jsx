@@ -23,6 +23,21 @@ function Home() {
     }
   }, [user]);
 
+  useEffect(() => {
+    window.history.pushState(null, null, window.location.href);
+
+    const handlePopState = (event) => {
+      window.history.pushState(null, null, window.location.href);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData({
